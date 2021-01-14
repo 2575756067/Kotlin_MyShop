@@ -1,6 +1,6 @@
 package com.shop.net.repository
 
-import com.shop.api.ServiceApi
+import com.example.basemvvm.api.ServiceApi
 import com.shop.net.RetrofitFactory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -53,5 +53,17 @@ class SystemRepository {
         serviceApi.getBrand()
     }
 
+    //todo  新品
+    suspend fun getGoodsList(map: HashMap<String, String>) = withContext(Dispatchers.IO) {
+        serviceApi.getNewGoods(map)
+    }
 
+
+    suspend fun getSortTab() = with(Dispatchers.IO) {
+        serviceApi.getSortTab()
+    }
+
+    suspend fun getSortData(id: Int) = with(Dispatchers.IO) {
+        serviceApi.getSortData(id)
+    }
 }

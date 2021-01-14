@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="good"
+            type="com.example.basemvvm.bean.newgoods.HomeNewGoodsBean.Goods" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_brand_name_detail_list_img"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_150"
+            app:imageUrl="@{good.list_pic_url}" />
+
+        <TextView
+            android:id="@+id/tv_brand_name_detail_list_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{good.name}" />
+
+        <TextView
+            android:id="@+id/tv_brand_name_detail_list_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{good.retail_price}"
+            android:gravity="center_horizontal"
+            android:textColor="#F44336" />
+
+    </LinearLayout>
+</layout>

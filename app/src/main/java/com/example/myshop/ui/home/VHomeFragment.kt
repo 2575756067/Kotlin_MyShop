@@ -21,6 +21,7 @@ import com.example.myshop.adapter.*
 import com.example.basemvvm.bean.Banner
 import com.example.myshop.callback.MyItemClick
 import com.example.myshop.ui.brand.HomeBrandActivity
+import com.example.myshop.ui.newgoods.NewGoodsActivity
 import com.example.myshop.viewmodel.HomeViewModel
 import com.shop.ui.home.fragment.home.HomeChannelTypeActivity
 import com.shop.ui.home.hom.BrandInfoActivity
@@ -141,6 +142,13 @@ class VHomeFragment : Fragment(R.layout.fragment_home) {
             var newBrandAdaoter = NewBrandAdaoter(newGoods, context)
             //todo  绑定适配器
             newgoods_recycle.adapter = newBrandAdaoter
+
+
+            //todo 点击新品首发 跳转
+            home_tv_new_name!!.setOnClickListener(View.OnClickListener {
+                var intent = Intent(context, NewGoodsActivity::class.java)
+                startActivity(intent)
+            })
         })
 
         /**
