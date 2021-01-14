@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="tongpao_item_img"
+            type="com.example.basemvvm.model.bean.tongpao.TongPaoBean.FilePathList" />
+
+        <variable
+            name="tongpao_item_img_click"
+            type="com.example.myshop.base.IItemClick" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:onClick="@{(view)->tongpao_item_img_click.itemClick(view.tag)}"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/title_tong"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="wrap_content"
+            android:text="@{tongpao_item_img.title}"
+            android:textColor="@color/colorblack"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_40"
+            android:textSize="@dimen/sp_14"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:text="@{tongpao_item_img.createTime}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_tong" />
+
+        <ImageView
+            android:id="@+id/iv_img_one"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{tongpao_item_img.filePathList.get(0).filePath}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

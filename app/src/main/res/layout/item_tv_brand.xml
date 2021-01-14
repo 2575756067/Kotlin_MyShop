@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="brand_item"
+            type="com.example.basemvvm.bean.DataX" />
+
+        <variable
+            name="brand_item_click"
+            type="com.example.myshop.base.IItemClick" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200"
+        android:onClick="@{(view)->brand_item_click.itemClick(view.tag)}">
+
+        <ImageView
+            android:id="@+id/img_tvbrand"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:imgUrl="@{brand_item.app_list_pic_url}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+
+                android:id="@+id/name_tvbrand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{brand_item.name}"
+                android:textColor="#fff" />
+
+            <View
+                android:layout_width="@dimen/dp_2"
+                android:layout_height="20dp"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:background="#fff" />
+
+            <TextView
+                android:id="@+id/pri_tvbrand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:text="@{brand_item.floor_price}"
+                android:textColor="#fff" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

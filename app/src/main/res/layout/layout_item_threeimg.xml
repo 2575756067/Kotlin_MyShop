@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="tongpao_item_threeimg"
+            type="com.example.basemvvm.model.bean.tongpao.TongPaoBean.FilePathList" />
+
+        <variable
+            name="tongpao_item_threeimg_click"
+            type="com.example.myshop.base.IItemClick" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(view)->tongpao_item_threeimg_click.itemClick(view.tag)}">
+
+
+        <TextView
+            android:id="@+id/title_tong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{tongpao_item_threeimg.title}"
+            android:textColor="@color/colorblack"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_threeimg_one"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:scaleType="fitXY"
+            app:imageUrl="@{tongpao_item_threeimg.filePathList.get(0).filePath}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_tong" />
+
+        <ImageView
+            android:id="@+id/iv_threeimg_two"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:scaleType="fitXY"
+            app:imageUrl="@{tongpao_item_threeimg.filePathList.get(1).filePath}"
+            app:layout_constraintLeft_toRightOf="@id/iv_threeimg_one"
+            app:layout_constraintTop_toBottomOf="@id/title_tong" />
+
+        <ImageView
+            android:id="@+id/iv_threeimg_three"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:scaleType="fitXY"
+            app:imageUrl="@{tongpao_item_threeimg.filePathList.get(2).filePath}"
+            app:layout_constraintLeft_toRightOf="@id/iv_threeimg_two"
+            app:layout_constraintTop_toBottomOf="@id/title_tong" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

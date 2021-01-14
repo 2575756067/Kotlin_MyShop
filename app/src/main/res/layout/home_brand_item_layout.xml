@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="bindbrand"
+            type="com.example.myshop.viewmodel.NewBindViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.home.NewBindActivity">
+
+        <ImageView
+            android:id="@+id/iv_item_brand"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:scaleType="centerCrop"
+            android:src="@{bindbrand.img}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_15"
+            android:text="@{bindbrand.name}"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_price_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{bindbrand.price}"
+            app:layout_constraintLeft_toLeftOf="@id/tv_name_brand"
+            app:layout_constraintTop_toBottomOf="@id/tv_name_brand" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
