@@ -2,8 +2,9 @@ package com.example.basemvvm.api
 
 import com.example.basemvvm.bean.BrandBean
 import com.example.basemvvm.bean.HomeBean
+import com.example.basemvvm.bean.sort.SortDataBean
+import com.example.basemvvm.bean.SortNavBean
 import com.example.basemvvm.bean.newgoods.HomeNewGoodsBean
-import com.example.basemvvm.bean.sort.SortTabBean
 import com.example.basemvvm.bean.topic.TopicBean
 import com.example.basemvvm.model.bean.tongpao.TongPaoBean
 import com.shop.net.BaseResp
@@ -38,9 +39,9 @@ interface ServiceApi {
 
     //https://cdplay.cn/api/catalog/index 分类竖着导航
     @GET("catalog/index")
-    suspend fun getSortTab(): SortTabBean
+    suspend fun getSortTab(): SortNavBean
 
     // https://cdplay.cn/api/  用来请求当前分类的列表数据
     @GET("catalog/current")
-    suspend fun getSortData(@Query("id") id: Int): SortTabBean
+    suspend fun getSortData(@Query("id") id: Int): SortDataBean
 }

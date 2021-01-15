@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         />
 
-    <com.example.myshop.utils.CustomViewPager
+    <com.example.basemvvm.utils.CustomViewPager
         android:id="@+id/home_type_vp_no"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

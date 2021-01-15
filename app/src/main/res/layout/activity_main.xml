@@ -10,12 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.example.myshop.utils.CustomViewPager
+        <com.example.basemvvm.utils.CustomViewPager
             android:id="@+id/main_vp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/nav_view" />
+            app:layout_constraintBottom_toTopOf="@id/nav_view"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_view"
@@ -24,11 +24,11 @@
             android:layout_marginStart="0dp"
             android:layout_marginEnd="0dp"
             android:background="?android:attr/windowBackground"
+            app:labelVisibilityMode="labeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/main_vp"
-            app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_nav_menu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

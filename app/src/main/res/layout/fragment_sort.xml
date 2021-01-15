@@ -4,8 +4,8 @@
     <data>
 
         <variable
-            name="sort_fragment"
-            type="com.example.basemvvm.bean.sort.SortTabBean" />
+            name="fragmentsort"
+            type="com.example.myshop.viewmodel.SortViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,16 +17,16 @@
             android:layout_height="match_parent">
 
             <q.rorbin.verticaltablayout.VerticalTabLayout
-                android:id="@+id/vTab"
+                android:id="@+id/sort_tab"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentLeft="true" />
 
-            <com.example.myshop.utils.CustomViewPager
+            <com.example.basemvvm.utils.CustomViewPager
                 android:id="@+id/vp_sort"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_toRightOf="@id/vTab" />
+                android:layout_toRightOf="@id/sort_tab" />
 
         </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

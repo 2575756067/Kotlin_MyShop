@@ -4,8 +4,8 @@ data class SortDataBean(
     val `data`: Data,
     val errmsg: String,
     val errno: Int
-) {
-
+)
+{
     data class Data(
         val currentCategory: CurrentCategory
     )

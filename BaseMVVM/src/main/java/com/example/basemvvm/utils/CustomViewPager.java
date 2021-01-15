@@ -1,4 +1,4 @@
-package com.example.myshop.utils;
+package com.example.basemvvm.utils;
 
 import android.content.Context;
 import android.util.AttributeSet;
