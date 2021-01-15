@@ -44,4 +44,8 @@ interface ServiceApi {
     // https://cdplay.cn/api/  用来请求当前分类的列表数据
     @GET("catalog/current")
     suspend fun getSortData(@Query("id") id: Int): SortDataBean
+
+    //专题
+    @GET("topic/list")
+    suspend fun getTopic(@Query("page") page: Int): TopicBean
 }

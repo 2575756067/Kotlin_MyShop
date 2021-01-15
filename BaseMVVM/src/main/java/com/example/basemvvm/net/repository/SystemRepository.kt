@@ -66,4 +66,8 @@ class SystemRepository {
     suspend fun getSortData(id: Int) = with(Dispatchers.IO) {
         serviceApi.getSortData(id)
     }
+
+    suspend fun getTopicData(page: Int) = with(Dispatchers.IO) {
+        serviceApi.getTopic(page)
+    }
 }

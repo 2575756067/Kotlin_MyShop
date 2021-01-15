@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="topic_item"
+            type="com.example.basemvvm.bean.topic.TopicBean.Data.DataX" />
+
+        <variable
+            name="topic_item_click"
+            type="com.example.myshop.base.IItemClick" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/topic_rlv_item_iv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_250"
+            android:scaleType="fitXY"
+            app:imageUrl="@{topic_item.scene_pic_url}" />
+
+        <TextView
+            android:id="@+id/topic_rlv_item_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@{topic_item.title}" />
+
+        <TextView
+            android:id="@+id/topic_rlv_item_brif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{topic_item.subtitle}"
+            android:textSize="@dimen/sp_10" />
+
+        <TextView
+            android:id="@+id/topic_rlv_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@{topic_item.price_info}"
+            android:textColor="#D50000"
+            android:textSize="@dimen/dp_12" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/colorhuise"></View>
+
+    </LinearLayout>
+</layout>
