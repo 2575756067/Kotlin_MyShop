@@ -7,7 +7,7 @@
 
         <variable
             name="newgoodslist"
-            type="com.example.basemvvm.bean.newgoods.HomeNewGoodsBean.Goods" />
+            type="com.example.basemvvm.bean.NewGoodsUpBean.BannerInfo" />
 
     </data>
 
@@ -27,13 +27,14 @@
                 android:id="@+id/img_hotgood"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorred"
-                android:scaleType="centerCrop"></ImageView>
+                android:scaleType="centerCrop"
+                app:imageUrl="@{newgoodslist.img_url}" />
 
             <TextView
                 android:id="@+id/txt_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@{newgoodslist.name}"
                 android:textColor="@color/colorwhite"
                 android:textSize="@dimen/sp_20"
                 app:layout_constraintBottom_toBottomOf="parent"

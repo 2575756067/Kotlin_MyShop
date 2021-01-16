@@ -36,6 +36,11 @@ interface ServiceApi {
     @GET("goods/list")
     suspend fun getNewGoods(@QueryMap map: HashMap<String, String>): BaseResp<HomeNewGoodsBean>
 
+    //todo  新品详情上面的数据
+    @GET("goods/hot")
+    suspend fun getNewGoodsUp(): NewGoodsUpBean
+
+
     //https://cdplay.cn/api/catalog/index 分类竖着导航
     @GET("catalog/index")
     suspend fun getSortTab(): SortNavBean

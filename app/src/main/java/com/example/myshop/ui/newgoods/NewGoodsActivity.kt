@@ -67,6 +67,11 @@ class NewGoodsActivity(
     override fun initData() {
         var map = HashMap<String, String>()
         mViewModel.getGoodsList(map)
+        mViewModel.getNewGoodsUpData()
+
+        mViewModel.NewGoodsUp.observe(this, Observer {
+            mDataBinding.setVariable(BR.newgoodslist, it)
+        })
     }
 
     override fun initVariable() {

@@ -58,6 +58,10 @@ class SystemRepository {
         serviceApi.getNewGoods(map)
     }
 
+    //todo 新品详情数据上面的 img，text
+    suspend fun getNewGoodsUpData() = withContext(Dispatchers.IO) {
+        serviceApi.getNewGoodsUp()
+    }
 
     suspend fun getSortTab() = with(Dispatchers.IO) {
         serviceApi.getSortTab()
