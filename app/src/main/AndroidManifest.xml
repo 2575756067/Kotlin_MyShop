@@ -27,6 +27,7 @@
         <activity android:name=".tongpao.ManyLayoutActivity"></activity>
         <activity android:name="com.shop.ui.home.hom.BrandInfoActivity" />
         <activity android:name=".ui.newgoods.NewGoodsActivity" />
+        <activity android:name=".ui.newgoods.SortDataInfoActivity" />
     </application>
 
 </manifest>

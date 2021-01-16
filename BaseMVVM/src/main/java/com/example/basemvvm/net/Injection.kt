@@ -1,7 +1,7 @@
-package com.shop.net
+package com.example.basemvvm.net
 
 import android.util.Log
-import com.shop.net.repository.SystemRepository
+import com.example.basemvvm.net.repository.SystemRepository
 
 /**
  * 数据仓库的代理类

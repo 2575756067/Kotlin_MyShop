@@ -6,20 +6,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
+import com.example.basemvvm.mvvm.BaseViewModel
+import com.example.basemvvm.mvvm.IBaseView
 import com.example.myshop.interfaces.IView
 
 /**
  * baseactivity基类
  */
-abstract class BaseActivity<VM:BaseViewModel,DB:ViewDataBinding>(var layoutId:Int,val vmClass:Class<VM>):AppCompatActivity(),
-    IView {
+abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding>(
+    var layoutId: Int,
+    val vmClass: Class<VM>
+) : AppCompatActivity(),
+    IBaseView {
 
-    protected lateinit var mViewModel:VM
-    protected lateinit var mDataBinding:DB
+    protected lateinit var mViewModel: VM
+    protected lateinit var mDataBinding: DB
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mDataBinding = DataBindingUtil.setContentView(this,layoutId)
+        mDataBinding = DataBindingUtil.setContentView(this, layoutId)
         mViewModel = ViewModelProvider(this).get(vmClass)
 
         initView()

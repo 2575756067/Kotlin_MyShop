@@ -23,4 +23,8 @@ class SplaseActivity : BaseActivity<SplaseViewModel, ActivitySplaseBinding>(
     override fun initVariable() {
 
     }
+
+    override fun showTips(tips: String) {
+        TODO("Not yet implemented")
+    }
 }

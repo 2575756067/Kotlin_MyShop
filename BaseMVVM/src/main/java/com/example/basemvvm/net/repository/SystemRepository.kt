@@ -1,4 +1,4 @@
-package com.shop.net.repository
+package com.example.basemvvm.net.repository
 
 import com.example.basemvvm.api.ServiceApi
 import com.shop.net.RetrofitFactory
@@ -69,5 +69,13 @@ class SystemRepository {
 
     suspend fun getTopicData(page: Int) = with(Dispatchers.IO) {
         serviceApi.getTopic(page)
+    }
+
+    suspend fun getSortDataInfo(id: Int) = with(Dispatchers.IO) {
+        serviceApi.getSortDataInfo(id)
+    }
+
+    suspend fun getSortDataInfoItem(id: Int) = with(Dispatchers.IO) {
+        serviceApi.getSortInfoItem(id)
     }
 }

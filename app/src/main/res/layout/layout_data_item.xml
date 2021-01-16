@@ -18,15 +18,16 @@
         android:layout_height="@dimen/dp_200"
         android:background="@color/cardview_light_background"
         android:gravity="center"
+        android:onClick="@{(view) -> sort_recy_click.itemClick(view.tag)}"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/sort_data_rlv_img"
-            app:imageUrl="@{sort_recy_data.wap_banner_url}"
             android:layout_width="@dimen/dp_90"
             android:layout_height="@dimen/dp_70"
             android:scaleType="fitXY"
-            android:src="@mipmap/ic_menu_me_nor" />
+            android:src="@mipmap/ic_menu_me_nor"
+            app:imageUrl="@{sort_recy_data.wap_banner_url}" />
 
         <TextView
             android:id="@+id/sort_data_rlv_name"

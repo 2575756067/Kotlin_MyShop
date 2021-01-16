@@ -3,8 +3,8 @@ package com.example.myshop.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.basemvvm.bean.topic.TopicBean
-import com.example.myshop.base.BaseViewModel
-import com.shop.net.Injection
+import com.example.basemvvm.mvvm.BaseViewModel
+import com.example.basemvvm.net.Injection
 import kotlinx.coroutines.launch
 
 class TopicViewModel : BaseViewModel(Injection.repository) {

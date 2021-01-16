@@ -1,11 +1,11 @@
-package com.shop.base
+package com.example.basemvvm.mvvm
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.basemvvm.net.repository.SystemRepository
 import com.example.basemvvm.utils.MyMmkv
 import com.shop.app.Constants
-import com.shop.net.repository.SystemRepository
 import kotlinx.coroutines.launch
 
 open class BaseViewModel(val repository: SystemRepository):ViewModel() {
@@ -23,21 +23,21 @@ open class BaseViewModel(val repository: SystemRepository):ViewModel() {
     /**
      * 刷新token
      */
-//    protected fun refreshToken(){
-//        viewModelScope.launch {
-//            var result = repository.refreshToken()
-//
-//            when(result.errno){
-//                0 -> {
-//                    MyMmkv.setValue(Constants.token,result.data)
-//                    refreshToken.postValue(1)
-//                }
-//                665 -> {
-//                    refreshToken.postValue(2)
-//                }
-//
-//            }
-//        }
-//    }
+    protected fun refreshToken(){
+        viewModelScope.launch {
+            var result = repository.refreshToken()
+
+            when(result.errno){
+                0 -> {
+                    MyMmkv.setValue(Constants.token,result.data)
+                    refreshToken.postValue(1)
+                }
+                665 -> {
+                    refreshToken.postValue(2)
+                }
+
+            }
+        }
+    }
 
 }

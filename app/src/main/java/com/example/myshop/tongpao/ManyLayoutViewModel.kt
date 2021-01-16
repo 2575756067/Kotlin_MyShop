@@ -1,17 +1,11 @@
 package com.example.myshop.tongpao
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.basemvvm.model.bean.tongpao.TongPaoBean
-import com.google.gson.Gson
-import com.shop.base.BaseViewModel
-import com.shop.net.Injection
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
+import com.example.basemvvm.mvvm.BaseViewModel
+import com.example.basemvvm.net.Injection
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import java.net.URL
 
 class ManyLayoutViewModel : BaseViewModel(Injection.repository) {
 

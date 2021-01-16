@@ -57,6 +57,10 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(
     override fun initVariable() {
     }
 
+    override fun showTips(tips: String) {
+        TODO("Not yet implemented")
+    }
+
 
     /**
      * innner修饰的内部类访问外部类

@@ -1,9 +1,9 @@
 package com.example.myshop.viewmodel
 
-import com.example.myshop.base.BaseViewModel
-import com.shop.net.Injection
+import com.example.basemvvm.mvvm.BaseViewModel
+import com.example.basemvvm.net.Injection
 
-class SplaseViewModel :BaseViewModel(Injection.repository){
+class SplaseViewModel : BaseViewModel(Injection.repository){
 
 
 }

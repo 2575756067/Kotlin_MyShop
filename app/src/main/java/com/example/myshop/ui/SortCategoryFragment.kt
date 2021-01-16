@@ -1,7 +1,9 @@
 package com.example.myshop.ui
 
+import android.content.Intent
 import android.util.Log
 import android.util.SparseArray
+import android.widget.ScrollView
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.basemvvm.BR
@@ -11,6 +13,7 @@ import com.example.myshop.adapter.SortCategroysAdapter
 import com.example.myshop.base.BaseFragment
 import com.example.myshop.base.IItemClick
 import com.example.myshop.databinding.SortDataLayoutBinding
+import com.example.myshop.ui.newgoods.SortDataInfoActivity
 import com.example.myshop.viewmodel.SortViewModel
 import kotlinx.android.synthetic.main.sort_data_layout.*
 
@@ -20,11 +23,9 @@ class SortCategoryFragment : BaseFragment<SortViewModel, SortDataLayoutBinding>
     var list: MutableList<SortDataBean.SubCategory> = mutableListOf()
     var sortcateadapter: SortCategroysAdapter? = null
 
-
     //采用伴生对象 companion object==static
     companion object {
         val instance: SortCategoryFragment by lazy { SortCategoryFragment() }
-
     }
 
     override fun initView() {
@@ -38,19 +39,27 @@ class SortCategoryFragment : BaseFragment<SortViewModel, SortDataLayoutBinding>
         sortcateadapter = SortCategroysAdapter(context!!, list, sortDataArr, itemClick())
         //绑定适配器
         rlv_sort.adapter = sortcateadapter
+        //todo 返回顶部
+        nestedVIew!!.fullScroll(ScrollView.FOCUS_UP)
+    }
+
+
+    inner class itemClick : IItemClick<SortDataBean.SubCategory> {
+        override fun itemClick(data: SortDataBean.SubCategory) {
+            var id = data.id
+            var name = data.name
+            val intent = Intent(activity, SortDataInfoActivity::class.java)
+            intent.putExtra("id", id)
+            intent.putExtra("name", name)
+            startActivity(intent)
+        }
     }
 
     override fun initVM() {
         mViewModel!!.sortdata.observe(this, Observer {
-//            sortcateadapter!!.refreshData(it.subCategoryList)
+            sortcateadapter!!.refreshData(it.subCategoryList)
             mDataBinding.setVariable(BR.sort_data, it)
         })
-    }
-
-    inner class itemClick : IItemClick<SortDataBean.SubCategory> {
-        override fun itemClick(data: SortDataBean.SubCategory) {
-            Log.e("TAG::SubCategory", data.name)
-        }
     }
 
     override fun initData() {

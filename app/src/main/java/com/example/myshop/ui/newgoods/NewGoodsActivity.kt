@@ -73,6 +73,10 @@ class NewGoodsActivity(
 
     }
 
+    override fun showTips(tips: String) {
+        TODO("Not yet implemented")
+    }
+
     fun updateGoodList(list: List<HomeNewGoodsBean.Goods>) {
         this.list.clear()
         this.list.addAll(list)

@@ -6,12 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
+import com.example.basemvvm.mvvm.BaseViewModel
 import com.example.basemvvm.mvvm.IBaseView
 
 /**
  * baseactivity基类
  */
-abstract class BaseActivity<VM:BaseViewModel,DB:ViewDataBinding>(var layoutId:Int,val vmClass:Class<VM>):AppCompatActivity(),
+abstract class BaseActivity<VM: BaseViewModel,DB:ViewDataBinding>(var layoutId:Int, val vmClass:Class<VM>):AppCompatActivity(),
     IBaseView {
 
     protected lateinit var mViewModel:VM

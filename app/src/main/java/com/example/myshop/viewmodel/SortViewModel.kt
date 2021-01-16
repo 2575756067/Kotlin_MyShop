@@ -4,8 +4,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.basemvvm.bean.sort.SortDataBean
 import com.example.basemvvm.bean.SortNavBean
-import com.example.myshop.base.BaseViewModel
-import com.shop.net.Injection
+import com.example.basemvvm.mvvm.BaseViewModel
+import com.example.basemvvm.net.Injection
 import kotlinx.coroutines.launch
 
 class SortViewModel : BaseViewModel(Injection.repository) {

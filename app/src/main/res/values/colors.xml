@@ -7,5 +7,8 @@
     <color name="colorwhite">#fff</color>
     <color name="colorblack">#000000</color>
     <color name="colorgreen">#388E3C</color>
+    <color name="f8">#F8F8F8</color>
+    <color name="colorA">#A3A0A0</color>
     <color name="colorhuise">#CAC8C8</color>
+    <color name="colorE">#F85D2C</color>
 </resources>

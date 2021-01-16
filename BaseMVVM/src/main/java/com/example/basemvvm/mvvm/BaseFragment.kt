@@ -8,8 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.basemvvm.mvvm.BaseViewModel
 
-abstract class BaseFragment<VM:BaseViewModel,DB:ViewDataBinding>(var layoutId:Int,var vmClass:Class<VM>):Fragment() {
+abstract class BaseFragment<VM: BaseViewModel,DB:ViewDataBinding>(var layoutId:Int, var vmClass:Class<VM>):Fragment() {
 
     protected lateinit var mViewModel:VM
     protected lateinit var mDataBinding:DB
